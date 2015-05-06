@@ -1,8 +1,8 @@
+<<<<<<< HEAD
 
 Markers = new Mongo.Collection('markers'); // includes buses, stops, player
 Stops = new Mongo.Collection("stops");
 Players = new Mongo.Collection("players"); // we need to use this
-// Buses = new Mongo.Collection("buses");
 Routes = new Mongo.Collection('routes');
 
 
@@ -11,7 +11,6 @@ if (Meteor.isClient) {
   Meteor.startup(function() {
     //fire this here to get permission to use geoloc in browser
     Geolocation.currentLocation();
-    Session.set("loc", playerLoc(true));
   });
 
   Deps.autorun(function(){
@@ -85,10 +84,6 @@ if (Meteor.isClient) {
 
     }
   });
-
-  // Template.gamePlayPage.rendered = function (){
-  //   addBusStops(Session.get('loc'));
-  // };
 
   //TODO: this is only setting team name temp in client session
   //Need to attach it to the user in db
@@ -241,4 +236,3 @@ var playerScoreIncr = function(playerId, stop, team){
   console.log('inPLater');
   console.log(Players.find({_id: playerId}).fetch()[0].score);
 };
-

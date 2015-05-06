@@ -124,4 +124,3 @@ geoQuery.on("key_entered", Meteor.bindEnvironment(function(vehicleId, vehicleLoc
     }
   });
   */
-// };
